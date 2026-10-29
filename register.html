@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add("js")</script>
+<title>التسجيل – من غير غش الموسم الثاني</title>
+<meta name="description" content="سجّل بياناتك للمشاركة في مسابقة من غير غش الموسم الثاني.">
+<meta name="author" content="Ibrahim Essam">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFC81E">
+<meta property="og:title" content="التسجيل – من غير غش الموسم الثاني">
+<meta property="og:description" content="سجّل بياناتك للمشاركة في مسابقة من غير غش الموسم الثاني.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="reg">
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__box"><span class="loader__mark">؟!</span><p>من غير غش</p><div class="loader__bar"><i></i></div></div>
+</div>
+<a class="skip" href="#main">تخطي إلى المحتوى</a>
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="logo" href="index.html" aria-label="من غير غش – الصفحة الرئيسية">
+      <img src="assets/logo.png" alt="" width="64" height="48">
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav class="menu" id="menu" aria-label="التنقل الرئيسي">
+      <a href="index.html" class="btn btn--sm btn--ghost"><i class="fa-solid fa-house"></i> العودة للرئيسية</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="regpage">
+  <div class="wrap wrap--narrow">
+    <h1 class="reg__t" data-in style="--i:0">سجّل في الموسم الثاني</h1>
+    <div class="notice" role="note" data-in style="--i:1"><i class="fa-solid fa-triangle-exclamation"></i>
+      <p><strong>شروط التقديم:</strong> السن من 10 إلى 16 سنة (الحدّان مشمولان) محسوبًا بتاريخ التسجيل، والمسابقة مقتصرة على منطقة محددة داخل محافظة الشرقية.</p></div>
+    <div class="msg msg--no" id="closedMsg" role="alert" hidden></div>
+
+    <form id="regForm" class="form" novalidate autocomplete="on" data-in style="--i:2">
+      <fieldset class="grp"><legend><i class="fa-solid fa-user"></i> بيانات الطالب</legend>
+        <div class="field"><label for="name">اسم الطالب بالكامل</label>
+          <input id="name" name="name" type="text" required minlength="8" autocomplete="name" placeholder="الاسم الثلاثي أو الرباعي">
+          <small class="err" aria-live="polite"></small></div>
+        <div class="field"><label for="birth">تاريخ الميلاد</label>
+          <input id="birth" name="birth" type="date" required autocomplete="bday">
+          <small class="err" aria-live="polite"></small></div>
+        <div class="field"><label for="age">السن</label>
+          <input id="age" type="text" readonly tabindex="-1" placeholder="يُحسب تلقائيًا من تاريخ الميلاد" aria-live="polite">
+          <small class="hint">للعرض فقط، ويُحسب بتاريخ اليوم.</small></div>
+      </fieldset>
+
+      <fieldset class="grp"><legend><i class="fa-brands fa-whatsapp"></i> أرقام التواصل</legend>
+        <div class="field"><label for="phone">رقم هاتف الطالب (متاح عليه واتساب)</label>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" dir="ltr" required placeholder="01xxxxxxxxx" maxlength="11" autocomplete="tel">
+          <small class="err" aria-live="polite"></small></div>
+        <div class="field field--check"><label class="check"><input type="checkbox" id="phoneWa" required> أؤكد أن هذا الرقم عليه واتساب ويمكن التواصل معي</label>
+          <small class="err" aria-live="polite"></small></div>
+        <div class="field"><label for="parent">رقم ولي الأمر (متاح عليه واتساب)</label>
+          <input id="parent" name="parent" type="tel" inputmode="numeric" dir="ltr" required placeholder="01xxxxxxxxx" maxlength="11">
+          <small class="err" aria-live="polite"></small></div>
+        <div class="field field--check"><label class="check"><input type="checkbox" id="parentWa" required> أؤكد أن هذا الرقم عليه واتساب ويمكن التواصل مع ولي الأمر</label>
+          <small class="err" aria-live="polite"></small></div>
+      </fieldset>
+
+      <fieldset class="grp"><legend><i class="fa-solid fa-location-dot"></i> مكان السكن</legend>
+        <div class="field"><label for="area">المنطقة</label>
+            <input id="area" name="area" type="text" required minlength="2" maxlength="60" autocomplete="off" placeholder="اكتب اسم المنطقة">
+            <small class="err" aria-live="polite"></small></div>
+        <div class="field"><label for="address">العنوان بالتفصيل</label>
+          <textarea id="address" name="address" rows="3" required minlength="10" maxlength="300" autocomplete="street-address" placeholder="الشارع – رقم المبنى – علامة مميزة"></textarea>
+          <small class="err" aria-live="polite"></small></div>
+      </fieldset>
+
+      <!-- Honeypot against bots: must stay empty -->
+      <div class="hp" aria-hidden="true"><label>الموقع <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <fieldset class="grp"><legend><i class="fa-solid fa-circle-check"></i> الإقرار</legend>
+        <div class="field"><label class="check"><input type="checkbox" id="agree" required> أوافق على شروط المسابقة وأقرّ بصحة البيانات المدخلة</label>
+          <small class="err" aria-live="polite"></small></div>
+      </fieldset>
+
+      <button class="btn btn--block" id="submitBtn" type="submit"><span class="btn__t">إرسال بياناتي</span><span class="spin" hidden></span></button>
+      <div class="msg" id="formMsg" role="status" aria-live="polite" hidden></div>
+    </form>
+  </div>
+</main>
+<footer class="foot">
+  <div class="foot__stripe" aria-hidden="true"></div>
+  <div class="wrap foot__in">
+    <div class="foot__brand">
+      <a class="logo" href="index.html" aria-label="من غير غش – الصفحة الرئيسية"><img src="assets/logo.png" alt="" width="86" height="64" loading="lazy"></a>
+      <p>مسابقة شبابية تجمع المعرفة وسرعة البديهة. الموسم الثاني قادم.</p>
+      <p class="foot__sp">برعاية منصة <b>Meer Plus</b></p>
+    </div>
+    <div class="foot__soc">
+      <h3>تابعنا على السوشيال ميديا</h3>
+      <!-- Links come from config.js (SOCIAL). An icon without a valid URL is hidden. -->
+      <div class="social">
+        <a href="#" data-social="facebook" target="_blank" rel="noopener" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" data-social="instagram" target="_blank" rel="noopener" aria-label="إنستجرام"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" data-social="tiktok" target="_blank" rel="noopener" aria-label="تيك توك"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" data-social="telegram" target="_blank" rel="noopener" aria-label="تيليجرام"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" data-social="youtube" target="_blank" rel="noopener" aria-label="يوتيوب"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot__bar">
+    <p dir="ltr">Developed By Eng <a class="dev" id="devLink" href="#" target="_blank" rel="noopener"><bdi>Ibrahim Essam</bdi></a> All Copy Rights Reserved @2026</p>
+  </div>
+</footer>
+<script src="config.js"></script>
+<script src="script.js" defer></script>
+</body>
+</html>
